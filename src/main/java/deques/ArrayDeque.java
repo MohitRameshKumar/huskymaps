@@ -157,10 +157,10 @@ public class ArrayDeque<E> implements Deque<E> {
     @SuppressWarnings("unchecked")
     private void resize(int capacity) {
         E[] newData = (E[]) new Object[capacity];
-        int i = increment(front, data.length); // need to use data.length instead of size
+        int i = increment(front, data.length); // need to use data.length
         for (int newIndex = 0; newIndex < size; newIndex += 1) {
             newData[newIndex] = data[i];
-            i = increment(i, data.length); // need to use data.length instead of size
+            i = increment(i, data.length); // need to use data.length
         }
         front = newData.length - 1;
         back = size;
